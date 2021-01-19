@@ -20,15 +20,14 @@ def main():
         return 0
 
     current_dir = os.path.dirname(os.path.realpath(__file__))
-    inputs = os.path.join(current_dir, "pdf_input")
+    inputs = os.path.join(current_dir, "input")
     outputs = os.path.join(current_dir, "output")
-    # search for those that contain output as start, followed by a series of digits (capture that), followed by .pdf
-    # used https://regex101.com/r/TksJPT/1/ for testing purposes
-    search = re.compile("^output(\d+)\.pdf$")
 
-    dir_list = os.listdir(outputs)
-    dir_list.sort(reverse=True)
+    dir_list = os.listdir(inputs)
+    # only splits first file
+    input_file = dir_list[0]
 
+    # tests
     # print(sys.argv)
 
     splits = []
@@ -44,9 +43,26 @@ def main():
                 continue
             splits.append(int(sys.argv[i]))
 
+    # sort list
     splits.sort()
 
-    print(splits)
+    with open(f"input/{input_file}", 'rb') as fp:
+        reader = PdfFileReader(fp)
+
+        page = 0
+        total_page_count = reader.getNumPages()
+        writer = PdfFileWriter()
+        output_num = 0
+        while page != total_page_count:
+            writer.addPage(reader.getPage(page))
+            page+=1
+            # if page is found in split, make a new file
+            if page in splits:
+                with open(f'output/output{output_num}.pdf', 'wb') as outfile:
+                    writer.write(outfile)
+                writer = PdfFileWriter()
+                output_num+=1
+
 
 if __name__ == "__main__":
     main()
