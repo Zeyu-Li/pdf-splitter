@@ -26,8 +26,11 @@ def main():
     dir_list = os.listdir(inputs)
     # only splits first file
     input_file = dir_list[0]
+    if input_file == '.gitkeep':
+        input_file = dir_list[1]
 
     # tests
+    # print(input_file)
     # print(sys.argv)
 
     splits = []
