@@ -1,6 +1,6 @@
 # PDF Splitter
 
-A Python script that splits pdf files or get the Windows executable [here](https://github.com/Zeyu-Li/pdf_merger/releases/tag/Version-1)
+A Python script that splits pdf files or get the Windows executable [here](https://github.com/Zeyu-Li/pdf-splitter/releases/tag/Version-1)
 
 
 
@@ -8,7 +8,7 @@ A Python script that splits pdf files or get the Windows executable [here](https
 
 ### Windows
 
-For Windows users you can download the latest release [here](https://github.com/Zeyu-Li/pdf_merger/releases/tag/Version-1) or go to [github.com/Zeyu-Li/pdf_merger/releases/tag/Version-1](https://github.com/Zeyu-Li/pdf_merger/releases/tag/Version-1) and click download
+For Windows users you can download the latest release [here](https://github.com/Zeyu-Li/pdf-splitter/releases/tag/Version-1) or go to [github.com/Zeyu-Li/pdf-splitter/releases/tag/Version-1](https://github.com/Zeyu-Li/pdf-splitter/releases/tag/Version-1) and click download
 
 Once you unzip you can go in and input your pdf files in the input and click on `split.exe` 
 
